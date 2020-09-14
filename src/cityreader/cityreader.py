@@ -9,7 +9,7 @@ class City:
     self.lat = lat
     self.lon = lon
   def __str__(self):
-    return f"{self.name}, {self.lat}, {self.lon}"
+    return f"{self.name}: ({self.lat}, {self.lon})"
 
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
@@ -78,9 +78,15 @@ cityreader(cities)
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
-  within = [new City(town.name, town.lat, town.lon) for town in cities if (lon1 >= town.lon >= lon2) and (lat1 >= town.lat >= lat2)] 
-  
+  within = [City(town.name, town.lat, town.lon) for town in cities if (lon1 >= town.lon >= lon2) and (lat1 >= town.lat >= lat2)] 
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
-  print(within)
   return within
+
+lat1, lon1 = input('Enter lat1,lon1: ').split(",")
+lat2, lon2 = input('Enter lat1,lon1: ').split(",")
+
+results = cityreader_stretch(float(lat1), float(lon1), float(lat2), float(lon2), cities)
+
+for result in results:
+  print(result)
