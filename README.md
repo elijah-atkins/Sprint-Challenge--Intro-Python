@@ -35,6 +35,7 @@ The `cityreader` stretch goal has its own test file, `test_stretch.py`, if you w
 
 **_It's never a bad idea to take a look at the test files in order to see what each test is expecting._**
 
+
 ## Minimum Viable Product
 
 In order to meet MVP requirements for this Sprint Challenge, complete all of the exercises posed in each directory by getting the tests for each exercise to pass.
